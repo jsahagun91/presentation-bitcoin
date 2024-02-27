@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="index.css"ß>
+    <!-- Titillium Web Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Titillium Web Font -->
+
+    <title>Viva Bitcoin | Presentación de Bitcoin</title>
+    <script>
+        const SLIDES = 35;
+        let current = parseInt(window.location.hash.substring(1)) || 0;
+        window.location.hash = current;
+        document.addEventListener("keydown", function(event) {
+            switch(event.key) {
+                case " ":
+                case "ArrowDown": 
+                case "ArrowRight":
+                case "Enter": 
+                  slide(current + 1);
+                  break;
+                case "ArrowLeft": 
+                case "ArrowUp": 
+                  slide(current - 1);
+                  break;
+            }
+        });
+
+        function slide(i) {
+            if (i < 0 || i >= SLIDES) {
+                return;
+            }
+
+            window.location.hash = current = i;
+        }
+
+        let x;
+
+        document.addEventListener('touchstart', e => {
+            x = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            if (e.changedTouches[0].screenX < x) {
+                slide(current + 1);
+            }
+
+            if (e.changedTouches[0].screenX > X ) {
+                slide(current - 1);
+            }
+        });
+    </script>
+    <style>
+        html {
+            background-color: black;
+            color: white;
+            font-size: 200%;
+            font-family: "Titillium Web", sans-serif;
+        }
+
+        h1 {
+            font-size: 2.0rem;
+        }
+        
+        section {
+        background-color: black;
+        padding-left: 2em;
+        padding-right: 2em;
+        bottom: 0em;
+        left: 0em;
+        position: absolute;
+        right: 0em;
+        top: 0em;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+        section:target {
+            z-index: 1;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="0"><h1>Bitcoin</h1></section>
+    <section id="1"><p>Bitcoin es una moneda.</p></section>
+</body>
+</html>
