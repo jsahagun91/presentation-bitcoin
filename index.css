@@ -8,6 +8,11 @@ section > p {
     font-size: 150%;
 }
 
+a {
+    color: white; /* White color for links */
+    text-decoration: underline; /* Optional: Removes underline from links */
+}
+
 @media screen and (max-width: 768px)  {
     section > p {
         font-size: 120%;
