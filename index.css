@@ -10,10 +10,12 @@ section > p {
 
 @media screen and (max-width: 768px)  {
     section > p {
-        font-size: 125%;
+        font-size: 120%;
     }
 
-    img {
-        object-fit: contain;
+    img.dollar {
+        max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below the image */
     }
 }
