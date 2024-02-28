@@ -8,7 +8,7 @@ section > p {
     font-size: 150%;
 }
 
-a {
+a, a:visited, a:hover, a:active {
     color: white; /* White color for links */
     text-decoration: underline; /* Optional: Removes underline from links */
 }
